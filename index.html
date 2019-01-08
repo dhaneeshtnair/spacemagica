@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/index.css"></script>
+  <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+  <script src="http://www.chartjs.org/docs/latest/gitbook/gitbook-plugin-chartjs/Chart.bundle.js"></script>
+  
+</head>
+<body>
+   <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Space Inspector</a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user" ></span>Configure Token</a></li>
+          </ul>
+        </div>
+    </nav>
+    <div class="container-fluid main" id="main">
+      <div class="row content">
+        <div class="col-sm-3 sidenav">
+          <hr>
+          
+
+          <label>Select Space</label>
+          <select type="text" class="form-control" id="spaces">
+              <option>Select Space</option>
+          </select>
+          <br>
+          <label>Chart Type</label>
+          <select type="text" class="form-control" id="chart">
+                <option>Bar Chart</option>
+          </select>
+          <br>
+          <label>Y Axis</label>
+          <select type="text" class="form-control" id="yAxes">
+              <option>count</option>
+          </select>
+          <br>
+          <label>X Axis</label>
+          <select type="text" class="form-control" id="xAxes">
+              <option>tags</option>
+              <option>properties</option>
+          </select>
+          <br>
+          <div class="pg">
+            <label>Select Property</label>
+            <select type="text" class="form-control" id="property">
+                
+            </select>
+          </div>
+          <br>
+          
+        </div>
+        <div class="col-sm-9" style="height:calc(100% - 100px)">
+            <div class="attr">
+                    
+              </div>
+              <div class="row" style="background: #ccc">
+                  <div class="col-sm-7">
+                      <label>Filter</label>
+                      <input class="form-control" id="filter" placeholder='JavaScript Expression Ex: feature.properties.name=="abc"'>
+                 </div>
+                  <div class="col-sm-2">
+                      <label>Group Count</label>
+                      <select type="text" class="form-control" id="count">
+                        <option selected>5</option>
+                        <option>10</option>
+                        <option>20</option>
+                        <option>50</option>
+                        <option>All</option>
+                      </select>
+
+                  </div>
+                  <div class="col-sm-3">
+                          <label>Theme</label>
+                          <select type="text" class="form-control" id="theme">
+                            <option selected value="white">Light</option>
+                            <option value="#123456">Dark</option>
+                          </select>
+                  </div>
+                </div>
+          <div style="top:100px;height:calc(100%-100px); display: block;width: 100%;">
+            <canvas id="myChart" ></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="animationload">
+      <div class="osahanloading"></div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Set Token</h4>
+            </div>
+            <div class="modal-body">
+                <label>XYZ Token</label>
+                <input type="text" class="form-control"  id="tokenText">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" onclick="saveModal()">Done</button>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+
+      <footer class="container-fluid">
+        <p style="text-align: center">XYZ Interospector (Contact Dhaneesh.tb@here.com)</p>
+      </footer>
+      <script src="js/index.js" ></script>
+</body>
+</html>
