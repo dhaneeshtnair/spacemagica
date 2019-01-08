@@ -42,7 +42,10 @@
       }
       checkToken();
    }
-   checkToken();
+   $(document).ready(function(){
+    checkToken();
+   });
+  
     function renderBarChart(spaceId,map){
       if(myChart!=null){
         myChart.destroy();
